@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
         transaction.replace(R.id.fragmentContainer, fragment_packages);
         transaction.addToBackStack(null);
         transaction.commit();
+        view.setVisibility(View.GONE);
 
     }
 }
