@@ -1,63 +1,60 @@
 package com.example.sprintm4_tryout;
 
 import android.os.Bundle;
-import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link viajes_fragment#newInstance} factory method to
- * create an instance of this fragment.
- *
- */
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.sprintm4_tryout.databinding.ViajesFragmentBinding;
+
+import java.util.ArrayList;
+import java.util.List;
+
+
 public class viajes_fragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    List<Elements> elements;
+    private ViajesFragmentBinding binding;
+    private ListAdapter miAdapter;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment viajes_fragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static viajes_fragment newInstance(String param1, String param2) {
-        viajes_fragment fragment = new viajes_fragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    public viajes_fragment() {
-        // Required empty public constructor
-    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.viajes_fragment, container, false);
+        binding= ViajesFragmentBinding.inflate(inflater,container,false);
+        View view = binding.getRoot();
+        return view;
     }
+
+    @Override
+    public void onViewCreated (View view, Bundle savedInstanceState){
+        createRecyclerView();
+    }
+
+    public void createRecyclerView() {
+
+        elements = new ArrayList<>();
+        elements.add(new Elements(R.drawable.cancun, "Cancun", "7 dias - 6 noches", "USD $500 Todo incluido"));
+        elements.add(new Elements(R.drawable.copacabana, "Copacabana", "5 dias - 4 noches", "USD $700 Todo incluido"));
+        elements.add(new Elements(R.drawable.isla_de_pascua, "Isla de Pascua", "6 dias - 5 noches", "USD $400 Todo incluido"));
+        elements.add(new Elements(R.drawable.vi_a_del_mar, "Viña del mar", "7 dias - 6 noches", "USD $600 Todo incluido"));
+
+
+
+        miAdapter = new ListAdapter(elements,requireContext());
+      //  miAdapter.setItems(elements);
+      binding.rvViajes.setAdapter(miAdapter);
+    }
+
+
+
 }

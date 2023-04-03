@@ -29,9 +29,11 @@ public class MainActivity extends AppCompatActivity {
         transaction= getSupportFragmentManager().beginTransaction();
 
         transaction.replace(R.id.fragmentContainer, fragment_packages);
+        view.setVisibility(View.GONE);
         transaction.addToBackStack(null);
         transaction.commit();
-        view.setVisibility(View.GONE);
+
+
 
     }
 }
