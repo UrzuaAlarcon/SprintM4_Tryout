@@ -26,14 +26,19 @@ public class MainActivity extends AppCompatActivity {
 
     public void travelPackages(View view) {
 
-        transaction= getSupportFragmentManager().beginTransaction();
+        transaction = getSupportFragmentManager().beginTransaction();
 
         transaction.replace(R.id.fragmentContainer, fragment_packages);
-        view.setVisibility(View.GONE);
         transaction.addToBackStack(null);
         transaction.commit();
 
+        if (getSupportFragmentManager().findFragmentById(R.id.fragmentContainer) instanceof viajes_fragment) {
+            view.setVisibility(View.INVISIBLE);
+        } else {
+            if (getSupportFragmentManager().findFragmentById(R.id.fragmentContainer) instanceof home_fragment) {
+                view.setVisibility(View.VISIBLE);
+            }
 
-
+        }
     }
 }
