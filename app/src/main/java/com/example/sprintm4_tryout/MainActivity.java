@@ -32,13 +32,7 @@ public class MainActivity extends AppCompatActivity {
         transaction.addToBackStack(null);
         transaction.commit();
 
-        if (getSupportFragmentManager().findFragmentById(R.id.fragmentContainer) instanceof viajes_fragment) {
-            view.setVisibility(View.INVISIBLE);
-        } else {
-            if (getSupportFragmentManager().findFragmentById(R.id.fragmentContainer) instanceof home_fragment) {
-                view.setVisibility(View.VISIBLE);
-            }
+
 
         }
     }
-}
