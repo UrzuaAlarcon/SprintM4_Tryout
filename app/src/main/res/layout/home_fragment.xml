@@ -34,19 +34,35 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
+        android:id="@+id/btnVerViajes"
+        android:layout_width="170dp"
         android:layout_height="wrap_content"
-        android:text="@string/paquetes_de_viajes"
-        android:onClick="travelPackages"
         android:backgroundTint="@color/blue1"
+        android:onClick="travelPackages"
+        android:text="@string/paquetes_de_viajes"
+        android:textSize="15dp"
         android:textStyle="bold"
-        android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:layout_constraintVertical_bias="0.639" />
+        app:layout_constraintVertical_bias="0.645" />
+
+    <Button
+        android:id="@+id/btnCrearViaje"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:text="Crear viaje"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:backgroundTint="@color/blue1"
+        android:onClick="crearViaje"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/btnVerViajes"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintVertical_bias="0.645" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

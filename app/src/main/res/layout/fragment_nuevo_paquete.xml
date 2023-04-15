@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NuevoPaquete"
+    android:background="@color/blue1"
+    >
+
+    <ImageView
+        android:id="@+id/destinationImage"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:src="@android:drawable/ic_menu_camera" />
+
+    <TextView
+        android:id="@+id/destinationTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Inserte destino"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:layout_below="@id/destinationImage"
+        android:layout_centerHorizontal="true"
+        />
+
+    <EditText
+        android:id="@+id/destinationTravel"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:hint="Cancun"
+        android:textStyle="italic"
+        android:textColor="@color/white"
+        android:layout_below="@id/destinationTitle"/>
+
+    <TextView
+        android:id="@+id/timeforTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Inserte duracion"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:layout_below="@id/destinationTravel"
+        android:layout_centerHorizontal="true"
+        />
+
+    <EditText
+        android:id="@+id/timeForTravel"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:hint="3 dias - 2 noches"
+        android:textStyle="italic"
+        android:textColor="@color/white"
+        android:layout_below="@id/timeforTitle"/>
+
+    <TextView
+        android:id="@+id/priceTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Inserte precio"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:layout_below="@id/timeForTravel"
+        android:layout_centerHorizontal="true"
+        />
+
+    <EditText
+        android:id="@+id/priceTravel"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:hint="USD $XXX"
+        android:textStyle="italic"
+        android:textColor="@color/white"
+        android:layout_below="@id/priceTitle"
+       />
+
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_below="@id/priceTravel"
+        android:layout_alignParentBottom="true"
+        android:text="guardar"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:backgroundTint="@color/green1"
+        />
+
+</RelativeLayout>
+
+</ScrollView>

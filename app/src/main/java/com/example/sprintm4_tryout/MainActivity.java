@@ -10,7 +10,7 @@ import android.view.View;
 public class MainActivity extends AppCompatActivity {
 
     FragmentTransaction transaction;
-    Fragment fragment_home, fragment_packages;
+    Fragment fragment_home, fragment_packages, fragment_newTravel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
         fragment_home = new home_fragment();
         fragment_packages = new viajes_fragment();
+        fragment_newTravel = new NuevoPaquete();
 
         getSupportFragmentManager().beginTransaction().add(R.id.fragmentContainer, fragment_home).commit();
 
@@ -32,7 +33,16 @@ public class MainActivity extends AppCompatActivity {
         transaction.addToBackStack(null);
         transaction.commit();
 
+        }
 
+        public void crearViaje (View view){
+
+            transaction = getSupportFragmentManager().beginTransaction();
+
+            transaction.replace(R.id.fragmentContainer, fragment_newTravel);
+            transaction.addToBackStack(null);
+            transaction.commit();
 
         }
+
     }
