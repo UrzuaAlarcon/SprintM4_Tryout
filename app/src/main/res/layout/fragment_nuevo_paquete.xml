@@ -14,10 +14,37 @@
     android:background="@color/blue1"
     >
 
+    <TextView
+        android:id="@+id/fragmentTitle"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="@string/crear_viaje"
+        android:gravity="center"
+        android:background="@color/green1"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/imageTitle"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@id/fragmentTitle"
+        android:text="Seleccionar imagen"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textAlignment="center"
+        android:gravity="center"
+
+        />
+
     <ImageView
         android:id="@+id/destinationImage"
         android:layout_width="match_parent"
-        android:layout_height="300dp"
+        android:layout_height="258dp"
+        android:layout_below="@id/imageTitle"
+        android:background="@color/white"
         android:src="@android:drawable/ic_menu_camera" />
 
     <TextView
@@ -91,6 +118,7 @@
         android:layout_below="@id/priceTravel"
         android:layout_alignParentBottom="true"
         android:text="guardar"
+        android:onClick="saveTravel"
         android:textStyle="bold"
         android:textSize="20sp"
         android:backgroundTint="@color/green1"

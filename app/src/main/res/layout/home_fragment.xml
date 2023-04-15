@@ -53,7 +53,7 @@
         android:id="@+id/btnCrearViaje"
         android:layout_width="170dp"
         android:layout_height="wrap_content"
-        android:text="Crear viaje"
+        android:text="@string/crear_viaje"
         android:textSize="15sp"
         android:textStyle="bold"
         android:backgroundTint="@color/blue1"
