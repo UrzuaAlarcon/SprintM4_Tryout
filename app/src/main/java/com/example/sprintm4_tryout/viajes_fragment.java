@@ -51,9 +51,15 @@ public class viajes_fragment extends Fragment {
 
 
 
+
         miAdapter = new ListAdapter(elements,requireContext());
       //  miAdapter.setItems(elements);
       binding.rvViajes.setAdapter(miAdapter);
+    }
+
+    public void onDatosNuevoPaqueteIngresados(NuevoPaquete datos) {
+       /* elements.add(new Elements(datos));
+        miAdapter.notifyDataSetChanged();*/
     }
 
 

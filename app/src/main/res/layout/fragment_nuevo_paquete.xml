@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+    <data>
+        <variable
+            name="insert"
+            type="com.example.sprintm4_tryout.NuevoPaquete" />
+    </data>
+
+    <ScrollView
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -45,7 +51,9 @@
         android:layout_height="258dp"
         android:layout_below="@id/imageTitle"
         android:background="@color/white"
-        android:src="@android:drawable/ic_menu_camera" />
+        android:src="@android:drawable/ic_menu_camera"
+        android:clickable="true"
+        />
 
     <TextView
         android:id="@+id/destinationTitle"
@@ -118,7 +126,6 @@
         android:layout_below="@id/priceTravel"
         android:layout_alignParentBottom="true"
         android:text="guardar"
-        android:onClick="saveTravel"
         android:textStyle="bold"
         android:textSize="20sp"
         android:backgroundTint="@color/green1"
@@ -127,3 +134,5 @@
 </RelativeLayout>
 
 </ScrollView>
+
+</layout>
