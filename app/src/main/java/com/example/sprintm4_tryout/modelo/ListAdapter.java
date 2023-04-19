@@ -1,4 +1,4 @@
-package com.example.sprintm4_tryout;
+package com.example.sprintm4_tryout.modelo;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
@@ -9,6 +9,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.sprintm4_tryout.R;
 
 import java.util.List;
 

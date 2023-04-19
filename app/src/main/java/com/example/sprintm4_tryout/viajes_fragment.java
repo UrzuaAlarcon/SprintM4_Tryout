@@ -6,9 +6,10 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.sprintm4_tryout.databinding.ViajesFragmentBinding;
+import com.example.sprintm4_tryout.modelo.Elements;
+import com.example.sprintm4_tryout.modelo.ListAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -44,10 +45,10 @@ public class viajes_fragment extends Fragment {
     public void createRecyclerView() {
 
         elements = new ArrayList<>();
-        elements.add(new Elements(R.drawable.cancun, "Cancun", "7 dias - 6 noches", "USD $500 Todo incluido"));
-        elements.add(new Elements(R.drawable.copacabana, "Copacabana", "5 dias - 4 noches", "USD $700 Todo incluido"));
-        elements.add(new Elements(R.drawable.isla_de_pascua, "Isla de Pascua", "6 dias - 5 noches", "USD $400 Todo incluido"));
-        elements.add(new Elements(R.drawable.vi_a_del_mar, "Viña del mar", "7 dias - 6 noches", "USD $600 Todo incluido"));
+        elements.add(new Elements(1,R.drawable.cancun, "Cancun", "7 dias - 6 noches", "USD $500 Todo incluido"));
+        elements.add(new Elements(2,R.drawable.copacabana, "Copacabana", "5 dias - 4 noches", "USD $700 Todo incluido"));
+        elements.add(new Elements(3,R.drawable.isla_de_pascua, "Isla de Pascua", "6 dias - 5 noches", "USD $400 Todo incluido"));
+        elements.add(new Elements(4,R.drawable.vi_a_del_mar, "Viña del mar", "7 dias - 6 noches", "USD $600 Todo incluido"));
 
 
 
@@ -57,10 +58,6 @@ public class viajes_fragment extends Fragment {
       binding.rvViajes.setAdapter(miAdapter);
     }
 
-    public void onDatosNuevoPaqueteIngresados(NuevoPaquete datos) {
-       /* elements.add(new Elements(datos));
-        miAdapter.notifyDataSetChanged();*/
-    }
 
 
 

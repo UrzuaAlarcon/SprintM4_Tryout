@@ -12,7 +12,7 @@
         android:theme="@style/Theme.SprintM4_Tryout"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".modelo.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

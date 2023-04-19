@@ -1,35 +1,24 @@
 package com.example.sprintm4_tryout;
 
-import static android.app.Activity.RESULT_OK;
-
-import android.content.Context;
 import android.content.Intent;
-import android.media.Image;
-import android.net.Uri;
 import android.os.Bundle;
 
-import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 
-import android.provider.ContactsContract;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageView;
 
 import com.example.sprintm4_tryout.databinding.FragmentNuevoPaqueteBinding;
-import com.example.sprintm4_tryout.databinding.ViajesFragmentBinding;
+import com.example.sprintm4_tryout.modelo.Elements;
 
-import java.util.ArrayList;
 import java.util.List;
-
-import javax.xml.transform.Result;
 
 public class NuevoPaquete extends Fragment {
 
@@ -37,13 +26,20 @@ public class NuevoPaquete extends Fragment {
 
     public Button btnSaveTravel;
 
+    List<Elements> elements2;
+
+    private int image;
+    private String destination;
+    private String timeFor;
+    private String price;
+
 
 
     public NuevoPaquete() {
         // Required empty public constructor
     }
 
-    public NuevoPaquete(String destination, String timeFortxt, String price) {
+    public NuevoPaquete(int image, String destination, String timeFortxt, String price) {
     }
 
     @Override
@@ -82,40 +78,25 @@ public class NuevoPaquete extends Fragment {
         });
     }
 
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data){
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == 1 && resultCode == RESULT_OK && data != null) {
-            Uri uri = data.getData();
-            binding.destinationImage.setImageURI(uri);
-        }
-    }
-    public interface nuevoPaqueteListener {
-        void onDatosNuevoPaqueteIngresados(NuevoPaquete datos);
-    }
-   private nuevoPaqueteListener listener;
-
-    @Override
-    public void onAttach(@NonNull Context context){
-        super.onAttach(context);
-        try {
-            listener = (nuevoPaqueteListener) context;
-        } catch (ClassCastException e){
-            throw new ClassCastException(context.toString() + "debe implementar la clase nuevoPaqueteListener");
-        }
-    }
 
     public void saveTravel(){
 
-        int image = binding.destinationImage.getImageAlpha();
-        String destination = binding.destinationTravel.getEditableText().toString();
-        String timeFortxt = binding.timeForTravel.getEditableText().toString();
-        String price = binding.priceTravel.getEditableText().toString();
-        //NuevoPaquete nuevoPaquete = new NuevoPaquete(image, destination, timeFortxt, price);
-        //listener.onDatosNuevoPaqueteIngresados(nuevoPaquete);
+        image = binding.destinationImage.getImageAlpha();
+        destination = binding.destinationTravel.getText().toString();
+        timeFor = binding.timeForTravel.getText().toString();
+        price = binding.priceTravel.getText().toString();
+
+        Elements elements = new Elements();
+        elements.setImage(image);
+        elements.setDestination(destination);
+        elements.setTimeFor(timeFor);
+        elements.setPrice(price);
+
 
         Log.i("pruebas", "setBtnSaveTravel: ");
 
     }
+
+
 
 }
