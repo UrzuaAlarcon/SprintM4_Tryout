@@ -1,5 +1,7 @@
 package com.example.sprintm4_tryout.modelo;
 
+import android.net.Uri;
+
 import androidx.annotation.NonNull;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
@@ -9,7 +11,7 @@ public class Elements {
 
     @PrimaryKey(autoGenerate = true)
     public long idElemento;
-    public int image;
+    public String image;
     public String destination;
     public String timeFor;
     public String price;
@@ -17,7 +19,7 @@ public class Elements {
     public Elements() {
     }
 
-    public Elements( long idElemento, int image, String destination, String timeFor, String price) {
+    public Elements( long idElemento, String image, String destination, String timeFor, String price) {
         this.idElemento = idElemento;
         this.image = image;
         this.destination = destination;
@@ -33,11 +35,11 @@ public class Elements {
         this.idElemento = idElemento;
     }
 
-    public int getImage() {
+    public String getImage() {
         return image;
     }
 
-    public void setImage(int image) {
+    public void setImage(String image) {
         this.image = image;
     }
 
