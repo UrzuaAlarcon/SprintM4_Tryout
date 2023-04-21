@@ -8,7 +8,7 @@ import androidx.room.PrimaryKey;
 
 @Entity
 public class Elements {
-
+//Atributos de la clase
     @PrimaryKey(autoGenerate = true)
     public long idElemento;
     public String image;
@@ -16,9 +16,11 @@ public class Elements {
     public String timeFor;
     public String price;
 
+    //constructor vacio
     public Elements() {
     }
 
+    //constructor con parametros
     public Elements( long idElemento, String image, String destination, String timeFor, String price) {
         this.idElemento = idElemento;
         this.image = image;
@@ -27,6 +29,7 @@ public class Elements {
         this.price = price;
     }
 
+    //getters y setters
     public long getIdElemento() {
         return idElemento;
     }

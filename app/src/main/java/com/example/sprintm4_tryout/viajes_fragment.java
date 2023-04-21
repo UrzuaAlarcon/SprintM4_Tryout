@@ -1,12 +1,18 @@
 package com.example.sprintm4_tryout;
 
+import static com.example.sprintm4_tryout.NuevoPaquete.MY_PERMISSIONS_REQUEST_READ_EXTERNAL_STORAGE;
+
+import android.Manifest;
 import android.content.Context;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
 import com.example.sprintm4_tryout.database.AppDatabase;
@@ -29,6 +35,7 @@ public class viajes_fragment extends Fragment {
     private ListAdapter miAdapter;
 
     private Context context1;
+
     public viajes_fragment(Context context) {
         context1 = context;
     }
@@ -43,7 +50,7 @@ public class viajes_fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        binding= ViajesFragmentBinding.inflate(inflater,container,false);
+        binding = ViajesFragmentBinding.inflate(inflater, container, false);
         return binding.getRoot();
     }
 
@@ -54,26 +61,18 @@ public class viajes_fragment extends Fragment {
 
     public void createRecyclerView() {
 
-
-
         elements = new ArrayList<>();
         /*elements.add(new Elements(1,R.drawable.cancun, "Cancun", "7 dias - 6 noches", "USD $500 Todo incluido"));
         elements.add(new Elements(2,R.drawable.copacabana, "Copacabana", "5 dias - 4 noches", "USD $700 Todo incluido"));
         elements.add(new Elements(3,R.drawable.isla_de_pascua, "Isla de Pascua", "6 dias - 5 noches", "USD $400 Todo incluido"));
         elements.add(new Elements(4,R.drawable.vi_a_del_mar, "Viña del mar", "7 dias - 6 noches", "USD $600 Todo incluido"));*/
 
-
         ExecutorService executorService = Executors.newSingleThreadExecutor();
         executorService.execute(new Runnable() {
             @Override
             public void run() {
 
-                // Insertar el animal y su ficha en la base de datos
                 elements = AppDatabase.getDatabase(requireContext()).daoElements().obtenerElementos();
-                Log.i("pruebas", "setBtnSaveTravel: " + elements);
-
-             //    new Handler(Looper.getMainLooper()).post(() -> miAdapter.notifyDataSetChanged());
-
             }
 
         });
@@ -82,15 +81,11 @@ public class viajes_fragment extends Fragment {
         } catch (InterruptedException e) {
 
         }
-        miAdapter = new ListAdapter(elements,requireContext());
-       // miAdapter.setItems(elements);
-      //  miAdapter.setItems(elements);
-      binding.rvViajes.setAdapter(miAdapter);
+        miAdapter = new ListAdapter(elements, requireContext());
+        binding.rvViajes.setAdapter(miAdapter);
         miAdapter.setItems(elements);
         miAdapter.update();
     }
-
-
 
 
 }
