@@ -47,6 +47,8 @@ public class NuevoPaquete extends Fragment {
     private String price;
     Uri imageUri;
 
+    
+
     public NuevoPaquete() {
         // Required empty public constructor
     }
@@ -108,6 +110,8 @@ public class NuevoPaquete extends Fragment {
         if (requestCode == 1 && resultCode == RESULT_OK && data != null) {
             imageUri = data.getData();
             binding.destinationImage.setImageURI(imageUri);
+
+
         }
     }
 

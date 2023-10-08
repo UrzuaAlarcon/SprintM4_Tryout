@@ -1,6 +1,7 @@
 package com.example.sprintm4_tryout.modelo;
 
 import android.content.Context;
+import android.content.pm.PackageManager;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.view.LayoutInflater;
@@ -78,6 +79,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
 
         //Paso de los elementos al ViewHolder
         public void bindData(final Elements item) {
+
 
             destinationImage.setImageURI(Uri.parse(item.getImage()));
             destination.setText(item.getDestination());
